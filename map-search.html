@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filing a Complaint</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+      <!-- Import Here Maps JavaScript and CSS -->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <script src="scripts/locate_me.js"></script>
+    
+    <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="https://misconduct-complaints.glitch.me/">Law Enforcement Misconduct Complaints</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://misconduct-complaints.glitch.me/">Home</a></li>
+                <!-- Dec. 4 hide Forum 
+                <li><a href="https://misconduct-complaints.glitch.me/forum.html">Forum</a></li>
+                -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="complaint-section">
+            <h1>Search Complaint Information</h1>
+            <!--Input text field is hidden-->
+            <div hidden class="search-container" id="search-container">
+                <input type="text" placeholder="Enter the Location Where Misconduct Happened" class="search-input">
+                <button class="search-button">Search</button>
+            </div>
+            <!-- map container -->
+            <div id="map"></div>
+        </section>
+    </main>
+</body>
+</html>

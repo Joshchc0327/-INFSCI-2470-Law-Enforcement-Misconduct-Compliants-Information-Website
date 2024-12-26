@@ -1,0 +1,554 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(90deg, #f6e27a, #000000);
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+.logo {
+  font-family: "Rye";
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none; /* 移除底線 */
+  color: black; /* 設置初始字體顏色 */
+  font-family: "Rye";
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.logo a:hover,
+.logo a:visited,
+.logo a:active {
+  text-decoration: none; /* 點擊後依然無底線 */
+  color: black; /* 點擊或訪問後顏色不變 */
+}
+
+/* Search and Map Section Styles */
+.complaint-section,
+.forum-title,
+.new-post-title,
+.survey-title,
+.tracker-title,
+.about-title,
+.faq-title {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto;
+  color: #a67f23;
+  text-align: center;
+}
+
+.complaint-section h1,
+.tracker-title h1,
+.new-post-title h1 {
+  font-size: 40px;
+  margin: 50px auto 0px auto;
+}
+
+.about-title h1 {
+  font-size: 30px;
+  margin: 30px auto 0px auto;
+}
+
+.search-container,
+.search-bar {
+  margin: 20px auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-input,
+.searchPost-input,
+.searchArea-input {
+  padding: 10px;
+  width: 75%;
+  max-width: 80%;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.search-button,
+.clear-button,
+.searchPost-button,
+.clearPost-button,
+.searchArea-button,
+.clearArea-button,
+.map-toggle-button,
+.post-button,
+.new-discussion-button,
+.submit-button {
+  background-color: #a67f23;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.map-toggle-button {
+  background-color: #a67f23;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 120px; /* 自動調整寬度以符合文字 */
+  text-align: center; /* 文字居中 */
+}
+
+
+.new-survey-button,
+.locate-me-button {
+  background-color: #a67f23;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 120px; /* 自動調整寬度以符合文字 */
+  text-align: center; /* 文字居中 */
+}
+
+.search-button:hover,
+.map-toggle-button:hover,
+.post-button:hover {
+  background-color: #815e17;
+}
+
+/* Map Container Styles */
+#map {
+  width: 50%; /* Map container width */
+  height: 500px; /* Map container height */
+  margin: 20px auto; /* Center horizontally */
+  border: 1px solid #cccccc;
+  display: block;
+}
+
+/* InfoBubble Styling */
+.here-map-info-bubble {
+  background-color: #ffffff; /* 白色背景 */
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px; /* 柔和的圓角 */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 輕微陰影 */
+  padding: 15px; /* 內邊距 */
+  font-family: "Arial", sans-serif; /* 字體樣式 */
+  font-size: 14px; /* 字體大小 */
+  color: #4a4a4a; /* 文字顏色 */
+  line-height: 1.6; /* 行距 */
+  width: 280px; /* 固定寬度 */
+  opacity: 1;
+}
+
+/* Paragraph styling */
+.here-map-info-bubble p {
+  margin: 10px 0; /* 段落間距 */
+  padding: 0; /* 無額外內邊距 */
+}
+
+/* Bold text for emphasis */
+.here-map-info-bubble strong {
+  font-weight: bold; /* 加粗文字 */
+  color: #a67f23; /* 與主題一致的顏色 */
+  font-size: 15px; /* 稍微增大字體 */
+}
+
+/* Link styling inside the bubble */
+.here-map-info-bubble a {
+  color: #0056b3; /* 超連結顏色 */
+  text-decoration: none; /* 移除底線 */
+}
+
+.here-map-info-bubble a:hover {
+  text-decoration: underline; /* 滑鼠懸停時顯示底線 */
+  color: #003e80; /* 懸停時更深的顏色 */
+}
+
+/* Table Styles */
+.info-table,
+.static-table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 40%;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-table th,
+.info-table td,
+.static-table th,
+.static-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #dddddd;
+}
+
+.info-table th {
+  background-color: #f6e27a;
+}
+
+.static-table th{
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.static-table td{
+  text-align: center;
+}
+
+.info-table td a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.info-table td a:hover {
+  text-decoration: underline;
+}
+
+/* General Styling for the Discussion */
+.discussions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 增加每個 discussion 卡片之間的間距 */
+  padding: 20px;
+  background-color: #f8f8f8; /* 背景顏色，讓卡片與背景有區分 */
+}
+
+.discussion {
+  border: 1px solid #dddddd; /* Light border around the card */
+  padding: 20px; /* Padding inside the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #ffffff; /* White background for the card */
+  margin-bottom: 20px; /* Spacing between discussions */
+  margin: auto;
+  width: 80%;
+}
+
+/* Discussion Header Section */
+.discussion-header {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between avatar and content */
+  margin-bottom: 10px; /* Space between header and body */
+}
+
+/* Avatar Styling */
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #d3d3d3; /* Light gray avatar placeholder */
+  border-radius: 50%; /* Circular avatar */
+}
+
+/* Header Content */
+.header-content h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.header-content p {
+  margin: 5px 0 0; /* Small spacing between title and meta information */
+  font-size: 14px;
+  color: #555555; /* Slightly gray text for meta information */
+  line-height: 1.4;
+}
+
+/* Author and Date Styling */
+.author {
+  font-weight: bold;
+  color: #000000; /* Black for emphasis */
+}
+
+.date {
+  color: #666666; /* Dimmed text color */
+}
+
+/* Location Styling */
+.location {
+  display: inline-flex;
+  align-items: center;
+  color: #555555;
+  font-size: 14px;
+}
+
+.location-icon {
+  width: 12px; /* Icon size */
+  height: 12px;
+  background-color: #666666; /* Gray color for the placeholder */
+  mask: url("https://cdn.glitch.global/34de1ca7-f984-4079-8c74-669066e13693/location-icon.svg?v=1732946066987")
+    no-repeat center; /* Replace with your location SVG */
+  -webkit-mask: url("https://cdn.glitch.global/34de1ca7-f984-4079-8c74-669066e13693/location-icon.svg?v=1732946066987")
+    no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Discussion Body */
+.discussion p {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5; /* Better readability */
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: gray; /* Subtle color for meta information */
+}
+
+/* Trending Section Styles */
+.trending {
+  margin: 20px;
+}
+
+.trending h3 {
+  margin-bottom: 10px;
+}
+
+.trending ul {
+  list-style: none;
+  padding: 0;
+}
+
+.trending ul li {
+  margin-bottom: 10px;
+}
+
+.tags button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #cccccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Form Section Styles */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea{
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+form select {
+  width: 50%; /* Control the width of the select element */
+  margin: 10px auto; /* Add vertical margin and center horizontally */
+  padding: 10px; /* Increase inner padding for better usability */
+  border: 1px solid #cccccc; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  background-color: #ffffff; /* Background color */
+  color: #333333; /* Text color */
+  outline: none; /* Remove the default outline */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition effect */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .cancel {
+  background-color: #cccccc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form .submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/** Information bubble*/
+/* Style the question mark button */
+.info-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+  position: relative;
+}
+
+/* Style the info bubble */
+.info-bubble {
+  background-color: #f9f9f9;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 15px 10px 10px 10px;
+  position: absolute;
+  z-index: 1000;
+  max-width: 300px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  color: #333333;
+  text-align: left;
+  display: none; /* Start hidden */
+}
+
+/* Style the exit button inside the info bubble */
+.exit-button {
+  background: none;
+  border: none;
+  color: #aaaaaa;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  color: #000000;
+}
+
+
+/* faq page*/
+/* Misconduct Section Styles */
+.misconduct-section {
+  padding: 20px;
+  background-color: #F3EBD8;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.misconduct-section h2 {
+  color: #a67f23;
+}
+
+.misconduct-section p {
+  padding: 0px 15px;
+  font-size: 20px;
+} 
+
+
+.faq {
+  margin: 20px auto;
+  max-width: 800px;
+  font-family: Arial, sans-serif;
+}
+
+.faq-item {
+  margin-bottom: 0px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #756A36;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  background-color: #ab9d55;
+}
+
+.faq-question:focus {
+  outline: 2px solid #815e17;
+}
+
+.faq-answer {
+  background-color: #F3EBD8;
+  padding: 5px 5px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.faq-answer p {
+  font-size: 16px;
+}
+
+.faq-title {
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .misconduct-section,
+  .faq {
+    max-width: 90%; /* 在小屏幕上，設置為屏幕寬度的 90% */
+  }
+}

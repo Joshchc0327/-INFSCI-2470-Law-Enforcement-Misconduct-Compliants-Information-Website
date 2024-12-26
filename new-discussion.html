@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Start a New Discussion</title>
+      <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+      <script src="scripts/forum.js"></script>
+      <link rel="stylesheet" href="styles/styles.css">
+   </head>
+   <body>
+      <header>
+         <nav class="navbar">
+            <div class="logo">
+               <a href="https://misconduct-complaints.glitch.me/">Law Enforcement Misconduct Complaints</a>
+            </div>
+             <!--
+            <ul class="nav-links">
+               <li><a href="https://misconduct-complaints.glitch.me/">Home</a></li>
+               <li><a href="https://misconduct-complaints.glitch.me/forum.html">Forum</a></li>
+            </ul>
+            -->
+         </nav>
+      </header>
+      <main>
+         <secion class="new-post-title">
+            <h1>Start a New Discussion</h1>
+         </secion>
+         <section class="form-container">
+            <form id="discussionForm">
+               <label for="title">Discussion Title</label>
+               <input type="text" id="title" placeholder="Add text">
+               <label for="name">Your Name</label>
+               <input type="text" id="name" placeholder="Add text">
+               <label for="content">Content</label>
+               <textarea id="content" placeholder="Add text"></textarea>
+               <div class="form-buttons">
+                  <button type="button" class="cancel">Cancel</button>
+                  <button type="submit" class="post-button">Post Discussion</button>
+               </div>
+            </form>
+            <script>
+               document.addEventListener("DOMContentLoaded", () => {
+                 const discussionForm = document.getElementById("discussionForm");
+               
+                 discussionForm.addEventListener("submit", (e) => {
+                   e.preventDefault();
+               
+                   const title = document.getElementById("title").value.trim();
+                   const name = document.getElementById("name").value.trim();
+                   const content = document.getElementById("content").value.trim();
+                   const location = "Oakland"; // Default location
+               
+                   if (title === "" || name === "" || content === "") {
+                     alert("Please fill in all fields before submitting.");
+                     return;
+                   }
+               
+                   // Format date as "Nov 7, 2024"
+                   const options = { year: "numeric", month: "short", day: "numeric" };
+                   const date = new Date().toLocaleDateString("en-US", options);
+               
+                   const discussionData = {
+                     title,
+                     author: name,
+                     content,
+                     date,
+                     location,
+                   };
+               
+                   localStorage.setItem("newDiscussion", JSON.stringify(discussionData));
+                   window.location.href = "forum.html"; // Redirect to forum.html
+                 });
+               
+                 const cancelButton = document.querySelector(".cancel");
+                 cancelButton.addEventListener("click", () => {
+                   window.location.href = "forum.html";
+                 });
+               });
+            </script>
+         </section>
+      </main>
+   </body>
+</html>

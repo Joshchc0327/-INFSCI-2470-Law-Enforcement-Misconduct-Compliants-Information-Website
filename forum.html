@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Experiences and Discussions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <script src="scripts/forum.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="https://misconduct-complaints.glitch.me/">Law Enforcement Misconduct Complaints</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://misconduct-complaints.glitch.me/">Home</a></li>
+                <li><a href="https://misconduct-complaints.glitch.me/tracker.html">Statistic Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="forum-title">
+          <h1>Community Experiences and Discussions</h1>
+          <div class="search-bar">
+              <input class="searchPost-input" type="text" placeholder="Search discussions or topics">
+              <button class="searchPost-button">Search</button>
+              <button class="clearPost-button">Clear</button>
+              <a href="new-discussion.html">
+                  <button class="new-discussion-button">+</button>                  
+              </a>
+          </div>
+        </section>          
+        <section class="discussions" id="discussionsContainer">
+            <article class="discussion">
+                <div class="discussion-header">
+                    <div class="avatar"></div>
+                    <div class="header-content">
+                        <h2>Title for Law Enforcement Misconduct Complaints</h2>
+                        <p>
+                            <span class="author">Carol Benson</span> on <span class="date">Nov 7, 2024</span>
+                            <span class="location">
+                                <i class="location-icon"></i> Oakland
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="#">more</a></p>
+                <div class="meta">35 replies</div>
+            </article>
+            <article class="discussion">
+                <div class="discussion-header">
+                    <div class="avatar"></div>
+                    <div class="header-content">
+                        <h2>Error title</h2>
+                        <p>
+                            <span class="author">Carol Benson</span> on <span class="date">Nov 7, 2024</span>
+                            <span class="location">
+                                <i class="location-icon"></i> Oakland
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...<a href="#">more</a></p>
+                <div class="meta">35 replies</div>
+            </article>
+        </section>
+        <!--
+        <aside class="trending">
+            <h3>Trending Discussions</h3>
+            <ul>
+                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></li>
+            </ul>
+            <h4>Tags</h4>
+            <div class="tags">
+                <button>fuse</button>
+                <button>ullamcorper</button>
+                <button>Lorem</button>
+            </div>
+        </aside>
+        -->
+    </main>
+    <script>
+          // Load discussions on page load
+          document.addEventListener('DOMContentLoaded', () => {
+              const discussionsContainer = document.getElementById('discussionsContainer');
+
+              // Check if there's a new discussion in localStorage
+              const newDiscussion = localStorage.getItem('newDiscussion');
+              if (newDiscussion) {
+                  const discussion = JSON.parse(newDiscussion);
+
+                  // Create new article element
+                  const article = document.createElement('article');
+                  article.classList.add('discussion');
+                  article.innerHTML = `
+                      <h2>${discussion.title}</h2>
+                      <p><strong>${discussion.author}</strong> on ${discussion.date}</p>
+                      <p>${discussion.content}</p>
+                  `;
+
+                  // Add to discussions container
+                  discussionsContainer.prepend(article);
+
+                  // Clear the new discussion data from localStorage
+                  localStorage.removeItem('newDiscussion');
+              }
+          });
+      </script>
+</body>
+</html>
